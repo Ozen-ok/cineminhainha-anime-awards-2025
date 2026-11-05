@@ -1,12 +1,24 @@
 import streamlit as st
 import pandas as pd
 import requests
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 st.set_page_config(page_title="CINEMINHAINHA ANIME AWARDS 🏆", page_icon="🎬", layout="centered")
 
 # --- BANCO DE DADOS NA NUVEM (JSONBin.io) ---
-BIN_ID = "69b6b879b7ec241ddc6e431b"
-API_KEY = "$2a$10$AJwD1gnm1M/EFnPbtr3S3.A9SnDRAsG43Ntk06D.cYcxOdnKGpmby"
+BIN_ID = os.getenv("JSONBIN_BIN_ID")
+API_KEY = os.getenv("JSONBIN_MASTER_KEY")
+
+if not BIN_ID or not API_KEY:
+    st.error(
+        "Configuração do JSONBin ausente. Defina JSONBIN_BIN_ID e "
+        "JSONBIN_MASTER_KEY no arquivo .env ou nas variáveis de ambiente."
+    )
+    st.stop()
+
 URL = f"https://api.jsonbin.io/v3/b/{BIN_ID}"
 
 HEADERS = {
