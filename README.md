@@ -112,4 +112,4 @@ A disponibilidade da votação depende do serviço JSONBin.io e das credenciais 
 
 **Ozen**
 
-[Repositório no GitHub](https://github.com/Ozen-ok/animeawards)
+![alt text](https://raw.githubusercontent.com/Ozen-ok/tcc-nosql-comparativo/refs/heads/main/assets/plankton.png)
